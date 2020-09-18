@@ -1,0 +1,24 @@
+<section>
+    <ul class="nav nav-pills">
+        <li ng-class="{active : panels.isSelected(1)}"><a ng-click="panels.selectTab(1)">Description</a>
+        </li>
+        <li ng-class="{active : panels.isSelected(2)}"><a ng-click="panels.selectTab(2)">Specifications</a></li>
+        <li ng-class="{active : panels.isSelected(3)}"><a ng-click="panels.selectTab(3)">Reviews</a></li>
+    </ul>
+    <div class="panel" ng-show="panels.isSelected(1)">
+        <h4>Description</h4>
+        <blockquote>{{product.description}}</blockquote>
+    </div>
+    <div class="panel" ng-show="panels.isSelected(2)">
+        <h4>Specifications</h4>
+        <blockquote>
+            Faces: {{product.specs.faces}} <br>
+            Color: {{product.specs.color}} <br>
+            Rarity: {{product.specs.rarity}} <br>
+            Shine: {{product.specs.shine}} <br>
+        </blockquote>
+    </div>
+    <div class="panel" ng-show="panels.isSelected(3)">
+        <review-panels ng-controller="ReviewController as reviewCtrl"></review-panels>
+    </div>
+</section>
