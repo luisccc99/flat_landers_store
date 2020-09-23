@@ -6,19 +6,12 @@
         <li ng-class="{active : panels.isSelected(3)}"><a ng-click="panels.selectTab(3)">Reviews</a></li>
     </ul>
     <div class="panel" ng-show="panels.isSelected(1)">
-        <h4>Description</h4>
-        <blockquote>{{product.description}}</blockquote>
+        <div product-description></div>
     </div>
     <div class="panel" ng-show="panels.isSelected(2)">
-        <h4>Specifications</h4>
-        <blockquote>
-            Faces: {{product.specs.faces}} <br>
-            Color: {{product.specs.color}} <br>
-            Rarity: {{product.specs.rarity}} <br>
-            Shine: {{product.specs.shine}} <br>
-        </blockquote>
+        <div product-specs></div>
     </div>
     <div class="panel" ng-show="panels.isSelected(3)">
-        <review-panels ng-controller="ReviewController as reviewCtrl"></review-panels>
+        <review-panels></review-panels>
     </div>
 </section>
